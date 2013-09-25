@@ -3,30 +3,30 @@
 .card-block, .card-ring {
   padding: 10px;
 }
-.card-block img, .card-ring img {
+.card-block > img, .card-ring > img {
   display: inline-block;
   vertical-align: middle;
   width: 50px;
   height: 50px;
   padding: 0px;
+  margin: 0px;
   border: solid 1px black;
   border-radius: 5px;
+  cursor: hand;
 }
-.card-block img:nth-child(1n+2) {
-  margin: 0px 0px 0px 5px;
+.card-block > img:nth-child(1n+2) {
+  margin-left: 5px;
 }
 .card-block.stack {
   position: relative;
 }
-.card-block.stack img {
+.card-block.stack > img {
   position: absolute;
   margin-left: 0px;
   top: 10px;
-  border-color: gray;
-  z-index: 0;
 }
-.card-block.stack img:hover {
-  z-index: 1;
+.card-block.stack > img:hover {
+  z-index: 9999 !important;
 }
 .card {
   display: inline-block;
