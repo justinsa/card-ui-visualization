@@ -1,8 +1,9 @@
 @import url('normalize.css');
 @import url('bootstrap-3.0.0.min.css');
 
-.card-block, .card-ring {
-  padding: 10px;
+.card-block {
+  padding: 0px;
+  margin: 10px;
 }
 .card-ring {
   position: relative;
@@ -11,6 +12,7 @@
   border: solid 1px gray;
   border-radius: 180px;
   margin: 10px auto;
+  padding: 0px;
 }
 .card-block > img, .card-ring > img {
   display: inline-block;
@@ -32,16 +34,16 @@
 .card-block.stack > img {
   position: absolute;
   margin-left: 0px;
-  top: 10px;
 }
-.card-block.stack > img:hover {
+.card-block.stack > img:hover, .card-block.stack > .card.invited:hover {
   z-index: 9999 !important;
-  top: 7px;
+  top: -3px;
   width: 56px;
   height: 56px;
   text-decoration: none;
 }
 .card-ring > img {
+  position: absolute;
   border-radius: 25px;
   padding: 0px;
   margin: 0px;
@@ -59,7 +61,12 @@
   text-decoration: none;
   margin-left: 5px;
 }
+.card-block.stack > .card.invited {
+  position: absolute;
+  margin-left: 0px;
+}
 .card-ring > .card {
+  position: absolute;
   border-radius: 25px;
   padding: 0px;
   margin: 0px;
@@ -71,7 +78,8 @@
 .card.invited {
   background-color: gray;
   background-image: url(../img/face-invited.gif);
-  background-position: center center;
+  background-position: top left;
+  background-size: cover;
 }
 .card.add {
   background-color: #008000;
