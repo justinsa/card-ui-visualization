@@ -171,7 +171,8 @@
       var clockwise = $(ring).hasClass('clockwise');
       var radius = diameter / 2;
       var children = $(ring).children();
-      var count = children.length;
+      var size = $(ring).attr('data-ring-size');
+      var count = size === undefined ? children.length : parseInt(size);
       var theta = (clockwise ? 1 : -1) * 2 * Math.PI / count;
       var thetaOffset = -(Math.PI / 2);
       children.each(function (index, node) {
