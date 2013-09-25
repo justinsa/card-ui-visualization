@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <link type="text/css" rel="stylesheet" href="assets/styles/main.css" />
   <script type="text/javascript" src="assets/scripts/jquery-1.10.2.min.js" /></script>
+  <script type="text/javascript" src="assets/scripts/bootstrap-3.0.0.min.js" /></script>
+  <script type="text/javascript" src="assets/scripts/underscore-1.5.2.min.js" /></script>
 </head>
 <body>
   <!--[if lte IE 9]>
@@ -171,7 +173,7 @@
         <li><code>add-count: 3</code></li>
       </ul>
     </p>
-    <div class="card-ring progressive-16">
+    <div class="card-ring" data-progressive="16">
       <img src="assets/img/face-ghisly.jpg" alt="Ghisly" />
       <img src="assets/img/face-brent.jpg" alt="Brent" />
       <img src="assets/img/face-rhea.jpg" alt="Rhea" />
@@ -185,5 +187,11 @@
     </div>
   </section>
 
+  <script type="text/javascript">
+    $('.card-ring').each(function (index, ring) {
+      var children = $(ring).children();
+      var count = children.length;
+    });
+  </script>
 </body>
 </html>

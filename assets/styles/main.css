@@ -1,7 +1,16 @@
 @import url('normalize.css');
+@import url('bootstrap-3.0.0.min.css');
 
 .card-block, .card-ring {
   padding: 10px;
+}
+.card-ring {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  border: solid 1px gray;
+  border-radius: 180px;
+  margin: 10px auto;
 }
 .card-block > img, .card-ring > img {
   display: inline-block;
@@ -30,6 +39,12 @@
   top: 7px;
   width: 56px;
   height: 56px;
+  text-decoration: none;
+}
+.card-ring > img {
+  border-radius: 25px;
+  padding: 0px;
+  margin: 0px;
 }
 .card {
   display: inline-block;
@@ -43,6 +58,14 @@
   border-radius: 5px;
   text-decoration: none;
   margin-left: 5px;
+}
+.card-ring > .card {
+  border-radius: 25px;
+  padding: 0px;
+  margin: 0px;
+}
+.card:hover, .card:focus {
+  text-decoration: none;
 }
 .card.empty {}
 .card.invited {
