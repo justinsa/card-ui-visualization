@@ -168,10 +168,11 @@
   <script type="text/javascript">
     $('.card-ring').each(function (index, ring) {
       var diameter = $(ring).innerWidth();
+      var clockwise = $(ring).hasClass('clockwise');
       var radius = diameter / 2;
       var children = $(ring).children();
       var count = children.length;
-      var theta = 2 * Math.PI / count;
+      var theta = (clockwise ? 1 : -1) * 2 * Math.PI / count;
       var thetaOffset = -(Math.PI / 2);
       children.each(function (index, node) {
         var offset = $(node).outerWidth() / 2;
