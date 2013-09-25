@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <link type="text/css" rel="stylesheet" href="assets/styles/main.css" />
   <script type="text/javascript" src="assets/scripts/jquery-1.10.2.min.js" /></script>
-  <script type="text/javascript" src="assets/scripts/bootstrap-3.0.0.min.js" /></script>
-  <script type="text/javascript" src="assets/scripts/underscore-1.5.2.min.js" /></script>
 </head>
 <body>
   <!--[if lte IE 9]>
@@ -18,14 +16,11 @@
   <section>
     <h2>Card Block</h2>
     <h3>Example: Single Row</h3>
-    <p>
-      Options:
-      <ul>
-        <li><code>row-size: 8</code></li>
-        <li><code>row-fill: true</code></li>
-      </ul>
-    </p>
-    <div class="card-block">
+    <ul>
+      <li><code>row-size: 8</code></li>
+      <li><code>row-fill: true</code></li>
+    </ul>
+    <div class="card-block row-fill" data-row-size="8">
       <img src="assets/img/face-ghisly.jpg" alt="Ghisly" />
       <img src="assets/img/face-brent.jpg" alt="Brent" />
       <img src="assets/img/face-rhea.jpg" alt="Rhea" />
@@ -36,15 +31,12 @@
       <a class="card add" href="#"></a>
     </div>
     <h3>Example: Multiple Rows</h3>
-    <p>
-      Options:
-      <ul>
-        <li><code>row-size: 8</code></li>
-        <li><code>row-fill: false</code> <em>(default)</em></li>
-        <li><code>add-count: 1</code> <em>(default)</em></li>
-      </ul>
-    </p>
-    <div class="card-block">
+    <ul>
+      <li><code>row-size: 8</code></li>
+      <li><code>row-fill: false</code> <em>(default)</em></li>
+      <li><code>add-count: 1</code> <em>(default)</em></li>
+    </ul>
+    <div class="card-block" data-row-size="8">
       <img src="assets/img/face-ghisly.jpg" alt="Ghisly" />
       <img src="assets/img/face-brent.jpg" alt="Brent" />
       <img src="assets/img/face-rhea.jpg" alt="Rhea" />
@@ -60,16 +52,13 @@
       <a class="card add" href="#"></a>
     </div>
     <h3>Example: Stacked Single Row (Ascending)</h3>
-    <p>
-      Options:
-      <ul>
-        <li><code>row-size: 16</code></li>
-        <li><code>row-fill: true</code></li>
-        <li><code>stack: true</code></li>
-        <li><code>stack-descend: false</code> <em>(default)</em></li>
-      </ul>
-    </p>
-    <div class="card-block stack">
+    <ul>
+      <li><code>row-size: 16</code></li>
+      <li><code>row-fill: true</code></li>
+      <li><code>stack: true</code></li>
+      <li><code>stack-descend: false</code> <em>(default)</em></li>
+    </ul>
+    <div class="card-block stack row-fill" data-row-size="16">
       <img style="left: calc(26px * 0);" src="assets/img/face-ghisly.jpg" alt="Ghisly" />
       <img style="left: calc(26px * 1);" src="assets/img/face-brent.jpg" alt="Brent" />
       <img style="left: calc(26px * 2);" src="assets/img/face-rhea.jpg" alt="Rhea" />
@@ -87,18 +76,15 @@
       <a class="card add" href="#"></a>
       <a class="card add" href="#"></a>
     </div>
-        <h3>Example: Stacked Single Row (Descending)</h3>
-    <p>
-      Options:
-      <ul>
-        <li><code>row-size: 16</code></li>
-        <li><code>row-fill: false</code> <em>(default)</em></li>
-        <li><code>add-count: 2</code></li>
-        <li><code>stack: true</code></li>
-        <li><code>stack-descend: true</code></li>
-      </ul>
-    </p>
-    <div class="card-block stack">
+    <h3>Example: Stacked Single Row (Descending)</h3>
+    <ul>
+      <li><code>row-size: 16</code></li>
+      <li><code>row-fill: false</code> <em>(default)</em></li>
+      <li><code>add-count: 2</code></li>
+      <li><code>stack: true</code></li>
+      <li><code>stack-descend: true</code></li>
+    </ul>
+    <div class="card-block stack stack-descend" data-row-size="16" data-add-count="2">
       <img class="descend" style="left: calc(26px * 0); z-index: 10;" src="assets/img/face-ghisly.jpg" alt="Ghisly" />
       <img class="descend" style="left: calc(26px * 1); z-index: 9" src="assets/img/face-brent.jpg" alt="Brent" />
       <img class="descend" style="left: calc(26px * 2); z-index: 8;" src="assets/img/face-rhea.jpg" alt="Rhea" />
@@ -118,14 +104,12 @@
   <section>
     <h2>Card Ring</h2>
     <h3>Example: Filled Ring</h3>
-    <p>
-      Options:
-      <ul>
-        <li><code>ring-size: 15</code></li>
-        <li><code>ring-fill: true</code></li>
-      </ul>
-    </p>
-    <div class="card-ring">
+    <ul>
+      <li><code>ring-size: 15</code></li>
+      <li><code>ring-fill: true</code></li>
+      <li><code>clockwise: true</code></li>
+    </ul>
+    <div class="card-ring clockwise ring-fill" data-ring-size="15">
       <img src="assets/img/face-ghisly.jpg" alt="Ghisly" />
       <img src="assets/img/face-brent.jpg" alt="Brent" />
       <img src="assets/img/face-rhea.jpg" alt="Rhea" />
@@ -143,14 +127,12 @@
       <a class="card add" href="#"></a>
     </div>
     <h3>Example: Dynamic Ring</h3>
-    <p>
-      Options:
-      <ul>
-        <li><code>ring-size: dynamic</code> <em>(default)</em></li>
-        <li><code>add-count: 3</code></li>
-      </ul>
-    </p>
-    <div class="card-ring">
+    <ul>
+      <li><code>ring-size: dynamic</code> <em>(default)</em></li>
+      <li><code>add-count: 3</code></li>
+      <li><code>clockwise: false</code> <em>(default)</em></li>
+    </ul>
+    <div class="card-ring" data-add-count="3">
       <img src="assets/img/face-ghisly.jpg" alt="Ghisly" />
       <img src="assets/img/face-brent.jpg" alt="Brent" />
       <img src="assets/img/face-rhea.jpg" alt="Rhea" />
@@ -163,15 +145,13 @@
       <a class="card add" href="#"></a>
     </div>
     <h3>Example: Progressive Ring</h3>
-    <p>
-      Options:
-      <ul>
-        <li><code>ring-size: 16</code></li>
-        <li><code>ring-fill: false</code> <em>(default)</em></li>
-        <li><code>add-count: 3</code></li>
-      </ul>
-    </p>
-    <div class="card-ring" data-progressive="16" style="border-style: none none solid solid;">
+    <ul>
+      <li><code>ring-size: 16</code></li>
+      <li><code>ring-fill: false</code> <em>(default)</em></li>
+      <li><code>add-count: 3</code></li>
+      <li><code>clockwise: false</code> <em>(default)</em></li>
+    </ul>
+    <div class="card-ring" data-ring-size="16" data-add-count="3" style="border-style: none none solid solid;">
       <img src="assets/img/face-ghisly.jpg" alt="Ghisly" />
       <img src="assets/img/face-brent.jpg" alt="Brent" />
       <img src="assets/img/face-rhea.jpg" alt="Rhea" />
@@ -192,15 +172,13 @@
       var children = $(ring).children();
       var count = children.length;
       var theta = 2 * Math.PI / count;
+      var thetaOffset = -(Math.PI / 2);
       children.each(function (index, node) {
-        /* Cartesion (x,y) = (r * cos(theta * (index + 1)), r * sin(theta * (index + 1))) */
         var offset = $(node).outerWidth() / 2;
-        var x = (radius - offset) + (radius * Math.cos(theta * (index + 1)));
-        var y = (radius - offset) + (radius * Math.sin(theta * (index + 1)));
+        var x = (radius - offset) + (radius * Math.cos(thetaOffset + (theta * (index + 1))));
+        var y = (radius - offset) + (radius * Math.sin(thetaOffset + (theta * (index + 1))));
         $(node).css('left', x);
         $(node).css('top', y);
-        console.log(node);
-        console.log('index: %d, theta: %f, offset: %f, x: %f, y: %f', index, theta, offset, x, y);
       });
     });
   </script>
