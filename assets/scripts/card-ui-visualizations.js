@@ -1,7 +1,6 @@
 $(function() {
-  var CARD_DATA_TEMPLATE = '<img src="%s" alt="%s" />';
+  var CARD_DATA_TEMPLATE = '<img class="%s" src="%s" alt="%s" />';
   var CARD_ADD_TEMPLATE = '<a class="card add" href="%s"></a>';
-  var CARD_INVITED_TEMPLATE = '<a class="card invited" href="%s"></a>';
 
   $('.card-block').each(function (index, block) {
     var options = {
@@ -17,7 +16,7 @@ $(function() {
       return;
     }
     options.data = window[options.data];
-    console.log(options.data);
+    var root = $(this);
   });
 
   $('.card-ring').each(function (index, ring) {

@@ -2,8 +2,11 @@
 @import url('bootstrap-3.0.0.min.css');
 
 .card-block {
-  margin: 10px;
+  margin: 0px;
   padding: 0px;
+}
+.card-block-row {
+  margin: 10px;
 }
 .card-ring {
   border-radius: 180px;
@@ -14,7 +17,7 @@
   position: relative;
   width: 360px;
 }
-.card-block > img, .card-ring > img {
+.card-block img.card, .card-ring img.card {
   border-radius: 5px;
   border: solid 1px black;
   cursor: hand;
@@ -25,17 +28,17 @@
   vertical-align: middle;
   width: 50px;
 }
-.card-block > img:nth-child(1n+2) {
+.card-block img.card:nth-child(1n+2) {
   margin-left: 5px;
 }
-.card-block.stack {
+.card-block.stack > .card-block-row {
   position: relative;
 }
-.card-block.stack > img {
+.card-block.stack img.card {
   margin-left: 0px;
   position: absolute;
 }
-.card-block.stack > img.card:hover {
+.card-block.stack img.card:hover {
   height: 56px;
   text-decoration: none;
   top: -3px;
