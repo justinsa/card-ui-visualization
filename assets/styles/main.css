@@ -17,7 +17,7 @@
   position: relative;
   width: 360px;
 }
-.card-block img.card, .card-ring img.card {
+.card-block img.card, .card-ring .card {
   border-radius: 5px;
   border: solid 1px black;
   cursor: hand;
