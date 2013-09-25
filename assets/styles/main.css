@@ -27,6 +27,9 @@
 }
 .card-block.stack > img:hover {
   z-index: 9999 !important;
+  top: 7px;
+  width: 56px;
+  height: 56px;
 }
 .card {
   display: inline-block;
