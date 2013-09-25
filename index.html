@@ -191,11 +191,16 @@
       var radius = diameter / 2;
       var children = $(ring).children();
       var count = children.length;
-      var theta = 360 / count;
+      var theta = 2 * Math.PI / count;
       children.each(function (index, node) {
-        /* Calculation:
-          (x,y) = (r * cos(theta * (index + 1)), r * sin(theta * (index + 1)))
-        */
+        /* Cartesion (x,y) = (r * cos(theta * (index + 1)), r * sin(theta * (index + 1))) */
+        var offset = $(node).outerWidth() / 2;
+        var x = (radius - offset) + (radius * Math.cos(theta * (index + 1)));
+        var y = (radius - offset) + (radius * Math.sin(theta * (index + 1)));
+        $(node).css('left', x);
+        $(node).css('top', y);
+        console.log(node);
+        console.log('index: %d, theta: %f, offset: %f, x: %f, y: %f', index, theta, offset, x, y);
       });
     });
   </script>
