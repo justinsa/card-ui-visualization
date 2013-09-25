@@ -173,7 +173,7 @@
         <li><code>add-count: 3</code></li>
       </ul>
     </p>
-    <div class="card-ring" data-progressive="16">
+    <div class="card-ring" data-progressive="16" style="border-style: none none solid solid;">
       <img src="assets/img/face-ghisly.jpg" alt="Ghisly" />
       <img src="assets/img/face-brent.jpg" alt="Brent" />
       <img src="assets/img/face-rhea.jpg" alt="Rhea" />
@@ -193,7 +193,12 @@
       var radius = diameter / 2;
       var children = $(ring).children();
       var count = children.length;
-      var center = $(ring).outerWidth() / 2;
+      var theta = 360 / count;
+      children.each(function (index, node) {
+        /* Calculation:
+          (x,y) = (r * cos(theta * (index + 1)), r * sin(theta * (index + 1)))
+        */
+      });
     });
   </script>
 </body>
