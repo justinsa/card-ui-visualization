@@ -1,5 +1,33 @@
 $(function() {
+  var CARD_DATA_TEMPLATE = '<img src="%s" alt="%s" />';
+  var CARD_ADD_TEMPLATE = '<a class="card add" href="%s"></a>';
+  var CARD_INVITED_TEMPLATE = '<a class="card invited" href="%s"></a>';
+
+  $('.card-block').each(function (index, block) {
+    var options = {
+      'add-count': $(this).attr('add-count') || 1,
+      'row-fill': $(this).hasClass('row-fill'),
+      'row-size': $(this).attr('data-row-size') || 10,
+      'stack': $(this).hasClass('stack'),
+      'stack-descend': $(this).hasClass('stack-descend'),
+      'data': $(this).attr('data-set')
+    };
+    if (options.data === undefined) {
+      // no data set provided so nothing to display
+      return;
+    }
+    options.data = window[options.data];
+    console.log(options.data);
+  });
+
   $('.card-ring').each(function (index, ring) {
+    var options = {
+      'add-count': $(this).attr('add-count') || 1,
+      'clockwise': $(this).hasClass('clockwise'),
+      'ring-fill': $(this).hasClass('ring-fill'),
+      'ring-size': $(this).attr('data-ring-size') || 'dynamic',
+      'data': []
+    };
     var diameter = $(ring).innerWidth();
     var clockwise = $(ring).hasClass('clockwise');
     var radius = diameter / 2;

@@ -2,28 +2,28 @@
 @import url('bootstrap-3.0.0.min.css');
 
 .card-block {
-  padding: 0px;
   margin: 10px;
+  padding: 0px;
 }
 .card-ring {
-  position: relative;
-  width: 360px;
-  height: 360px;
-  border: solid 1px gray;
   border-radius: 180px;
+  border: solid 1px gray;
+  height: 360px;
   margin: 10px auto;
   padding: 0px;
+  position: relative;
+  width: 360px;
 }
 .card-block > img, .card-ring > img {
+  border-radius: 5px;
+  border: solid 1px black;
+  cursor: hand;
   display: inline-block;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
   vertical-align: middle;
   width: 50px;
-  height: 50px;
-  padding: 0px;
-  margin: 0px;
-  border: solid 1px black;
-  border-radius: 5px;
-  cursor: hand;
 }
 .card-block > img:nth-child(1n+2) {
   margin-left: 5px;
@@ -32,61 +32,41 @@
   position: relative;
 }
 .card-block.stack > img {
-  position: absolute;
   margin-left: 0px;
+  position: absolute;
 }
-.card-block.stack > img:hover, .card-block.stack > .card.invited:hover {
-  z-index: 9999 !important;
-  top: -3px;
-  width: 56px;
+.card-block.stack > img.card:hover {
   height: 56px;
   text-decoration: none;
-}
-.card-ring > img {
-  position: absolute;
-  border-radius: 25px;
-  padding: 0px;
-  margin: 0px;
-}
-.card {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  line-height: 50px;
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  border: solid 1px black;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-left: 5px;
-}
-.card-block.stack > .card.invited {
-  position: absolute;
-  margin-left: 0px;
-}
-.card-ring > .card {
-  position: absolute;
-  border-radius: 25px;
-  padding: 0px;
-  margin: 0px;
-}
-.card:hover, .card:focus {
-  text-decoration: none;
-}
-.card.empty {}
-.card.invited {
-  background-color: gray;
-  background-image: url(../img/face-invited.gif);
-  background-position: top left;
-  background-size: cover;
+  top: -3px;
+  width: 56px;
+  z-index: 9999 !important;
 }
 .card.add {
   background-color: #008000;
+  border-radius: 5px;
+  border: solid 1px black;
+  color: white;
+  display: inline-block;
   font-family: arial, sans-serif;
   font-size: 24px;
-  color: white;
+  height: 50px;
+  line-height: 50px;
+  margin-left: 5px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 50px;
 }
 .card.add:after {
   content: '+';
+}
+.card-ring > .card {
+  border-radius: 25px;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+}
+.card:hover, .card:focus {
+  text-decoration: none;
 }
