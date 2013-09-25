@@ -3,35 +3,40 @@ $(function() {
   var CARD_ADD_TEMPLATE = '<a class="card add" href="%s"></a>';
 
   $('.card-block').each(function (index, block) {
+    var block = $(this);
     var options = {
-      'add-count': $(this).attr('add-count') || 1,
-      'row-fill': $(this).hasClass('row-fill'),
-      'row-size': $(this).attr('data-row-size') || 10,
-      'stack': $(this).hasClass('stack'),
-      'stack-descend': $(this).hasClass('stack-descend'),
-      'data': $(this).attr('data-set')
+      'add-count': block.attr('add-count') ? parseInt(block.attr('add-count')) : 1,
+      'row-fill': block.hasClass('row-fill'),
+      'row-size': block.attr('data-row-size') ? parseInt(block.attr('data-row-size')) : 10,
+      'stack': block.hasClass('stack'),
+      'stack-descend': block.hasClass('stack-descend'),
+      'data': block.attr('data-set')
     };
     if (options.data === undefined) {
-      // no data set provided so nothing to display
+      // no data set provided ergo nothing to display
       return;
     }
     options.data = window[options.data];
-    var root = $(this);
+    var block = $(this);
+    _.each(options.data, function (element) {
+
+    });
   });
 
   $('.card-ring').each(function (index, ring) {
+    ring = $(ring);
     var options = {
-      'add-count': $(this).attr('add-count') || 1,
-      'clockwise': $(this).hasClass('clockwise'),
-      'ring-fill': $(this).hasClass('ring-fill'),
-      'ring-size': $(this).attr('data-ring-size') || 'dynamic',
-      'data': []
+      'add-count': ring.attr('add-count') ? parseInt(ring.attr('add-count')) : 1,
+      'clockwise': ring.hasClass('clockwise'),
+      'ring-fill': ring.hasClass('ring-fill'),
+      'ring-size': ring.attr('data-ring-size') ? parseInt(ring.attr('data-ring-size')) : 0,
+      'data': ring.attr('data-set')
     };
-    var diameter = $(ring).innerWidth();
-    var clockwise = $(ring).hasClass('clockwise');
+    var diameter = ring.innerWidth();
+    var clockwise = ring.hasClass('clockwise');
     var radius = diameter / 2;
-    var children = $(ring).children();
-    var size = $(ring).attr('data-ring-size');
+    var children = ring.children();
+    var size = ring.attr('data-ring-size');
     var count = size === undefined ? children.length : parseInt(size);
     var theta = (clockwise ? 1 : -1) * 2 * Math.PI / count;
     var thetaOffset = -(Math.PI / 2);
