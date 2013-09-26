@@ -25,7 +25,7 @@
       <li><code>row-fill: true</code></li>
     </ul>
     <script type="text/javascript">
-      var example1 = [
+      var dataSet1 = [
         { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
         { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
         { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
@@ -33,43 +33,58 @@
         { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
         { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" }
       ];
-      var example2 = [
+      var dataSet2 = [
         { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
         { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
         { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
         { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
         { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
-        { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Tom Kuhn", "html-description":"Emily" },
-        { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Tom Kuhn", "html-description":"Shane Mc Hugh" },
-        { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Tom Kuhn", "html-description":"Katrina" },
-        { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Tom Kuhn", "html-description":"Jason Schneekloth" },
+        { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Emily", "html-description":"Emily" },
+        { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Shane Mc Hugh", "html-description":"Shane Mc Hugh" },
+        { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Katrina", "html-description":"Katrina" },
+        { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Jason Schneekloth", "html-description":"Jason Schneekloth" },
         { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" }
       ];
-      var example3 = [
+      var dataSet3 = [
         { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
         { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
         { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
         { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
         { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
-        { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Tom Kuhn", "html-description":"Emily" },
-        { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Tom Kuhn", "html-description":"Shane Mc Hugh" },
-        { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Tom Kuhn", "html-description":"Katrina" },
-        { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Tom Kuhn", "html-description":"Jason Schneekloth" },
+        { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Emily", "html-description":"Emily" },
+        { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Shane Mc Hugh", "html-description":"Shane Mc Hugh" },
+        { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Katrina", "html-description":"Katrina" },
+        { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Jason Schneekloth", "html-description":"Jason Schneekloth" },
         { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" },
         { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-02" }
       ];
+      var dataSet4 = [
+        { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
+        { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
+        { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
+        { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
+        { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
+        { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Emily", "html-description":"Emily" },
+        { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Shane Mc Hugh", "html-description":"Shane Mc Hugh" },
+        { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Katrina", "html-description":"Katrina" },
+        { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Jason Schneekloth", "html-description":"Jason Schneekloth" },
+        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" },
+        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-02" },
+        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-03" }
+      ];
+
       var addClick = function () {
         alert('You clicked an Add button!');
       }
     </script>
-    <div class="card-block row-fill" data-row-size="8" data-set="example1" data-add-click-callback="addClick"></div>
+    <div class="card-block row-fill" data-row-size="8" data-set="dataSet1" data-add-click-callback="addClick"></div>
     <h3>Example: Multiple Rows</h3>
     <ul>
       <li><code>row-size: 8</code></li>
       <li><code>row-fill: false</code> <em>(default)</em></li>
       <li><code>add-count: 1</code> <em>(default)</em></li>
     </ul>
-    <div class="card-block" data-row-size="8" data-set="example2" data-add-click-callback="addClick"></div>
+    <div class="card-block" data-row-size="8" data-set="dataSet2" data-add-click-callback="addClick"></div>
     <h3>Example: Stacked Single Row (Ascending)</h3>
     <ul>
       <li><code>row-size: 16</code></li>
@@ -78,7 +93,7 @@
       <li><code>stack-descend: false</code> <em>(default)</em></li>
       <li><code>stack-card-offset: 26</code></li>
     </ul>
-    <div class="card-block stack row-fill" data-row-size="16" data-set="example3" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
+    <div class="card-block stack row-fill" data-row-size="16" data-set="dataSet3" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
     <h3>Example: Stacked Single Row (Descending)</h3>
     <ul>
       <li><code>row-size: 16</code></li>
@@ -88,7 +103,7 @@
       <li><code>stack-descend: true</code></li>
       <li><code>stack-card-offset: 26</code></li>
     </ul>
-    <div class="card-block stack stack-descend" data-row-size="16" data-set="example3" data-add-count="2" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
+    <div class="card-block stack stack-descend" data-row-size="16" data-set="dataSet3" data-add-count="2" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
   </section>
 
   <section>
@@ -99,41 +114,14 @@
       <li><code>ring-fill: true</code></li>
       <li><code>clockwise: true</code></li>
     </ul>
-    <div class="card-ring clockwise ring-fill" data-ring-size="15">
-      <img class="card complete" src="assets/img/face-ghisly.jpg" alt="Ghisly" />
-      <img class="card complete" src="assets/img/face-brent.jpg" alt="Brent" />
-      <img class="card complete" src="assets/img/face-rhea.jpg" alt="Rhea" />
-      <img class="card complete" src="assets/img/face-evelyn.jpg" alt="Evelyn" />
-      <img class="card complete" src="assets/img/face-tom.jpg" alt="Tom" />
-      <img class="card complete" src="assets/img/face-emily.jpg" alt="Emily" />
-      <img class="card complete" src="assets/img/face-shane.jpg" alt="Shane" />
-      <img class="card complete" src="assets/img/face-katrina.jpg" alt="Katrina" />
-      <img class="card complete" src="assets/img/face-jason.jpg" alt="Jason" />
-      <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-      <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-      <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-      <button class="card add" onclick="addClick"></button>
-      <button class="card add" onclick="addClick"></button>
-      <button class="card add" onclick="addClick"></button>
-    </div>
+    <div class="card-ring clockwise ring-fill" data-ring-size="15" data-set="dataSet4"></div>
     <h3>Example: Dynamic Ring</h3>
     <ul>
       <li><code>ring-size: dynamic</code> <em>(default)</em></li>
       <li><code>add-count: 3</code></li>
       <li><code>clockwise: false</code> <em>(default)</em></li>
     </ul>
-    <div class="card-ring" data-add-count="3">
-      <img class="card complete" src="assets/img/face-ghisly.jpg" alt="Ghisly" />
-      <img class="card complete" src="assets/img/face-brent.jpg" alt="Brent" />
-      <img class="card complete" src="assets/img/face-rhea.jpg" alt="Rhea" />
-      <img class="card complete" src="assets/img/face-evelyn.jpg" alt="Evelyn" />
-      <img class="card complete" src="assets/img/face-tom.jpg" alt="Tom" />
-      <img class="card complete" src="assets/img/face-emily.jpg" alt="Emily" />
-      <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-      <button class="card add" onclick="addClick"></button>
-      <button class="card add" onclick="addClick"></button>
-      <button class="card add" onclick="addClick"></button>
-    </div>
+    <div class="card-ring" data-add-count="3" data-set="dataSet1"></div>
     <h3>Example: Progressive Ring</h3>
     <ul>
       <li><code>ring-size: 16</code></li>
@@ -141,18 +129,7 @@
       <li><code>add-count: 3</code></li>
       <li><code>clockwise: false</code> <em>(default)</em></li>
     </ul>
-    <div class="card-ring" data-ring-size="16" data-add-count="3" style="border-style: none none solid solid;">
-      <img class="card complete" src="assets/img/face-ghisly.jpg" alt="Ghisly" />
-      <img class="card complete" src="assets/img/face-brent.jpg" alt="Brent" />
-      <img class="card complete" src="assets/img/face-rhea.jpg" alt="Rhea" />
-      <img class="card complete" src="assets/img/face-evelyn.jpg" alt="Evelyn" />
-      <img class="card complete" src="assets/img/face-tom.jpg" alt="Tom" />
-      <img class="card complete" src="assets/img/face-emily.jpg" alt="Emily" />
-      <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-      <button class="card add" onclick="addClick"></button>
-      <button class="card add" onclick="addClick"></button>
-      <button class="card add" onclick="addClick"></button>
-    </div>
+    <div class="card-ring" data-ring-size="16" data-add-count="3" data-set="dataSet1"></div>
   </section>
 </body>
 </html>

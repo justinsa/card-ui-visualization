@@ -36,7 +36,7 @@ $(function() {
     }
     options['data-length'] = options.data.length;
 
-    // generate the mark-up
+    // generate mark-up
     var $row = null;
     _.each(options.data, function (element, index) {
       if (index % options['row-size'] === 0) {
@@ -76,7 +76,7 @@ $(function() {
     $ring = $(this);
     var options = {
       'add-click-callback': $ring.attr('data-add-click-callback'),
-      'add-count': $ring.attr('add-count') ? parseInt($ring.attr('add-count')) : 1,
+      'add-count': $ring.attr('data-add-count') ? parseInt($ring.attr('data-add-count')) : 1,
       'clockwise': $ring.hasClass('clockwise'),
       'ring-fill': $ring.hasClass('ring-fill'),
       'ring-size': $ring.attr('data-ring-size') ? parseInt($ring.attr('data-ring-size')) : 0,
@@ -85,20 +85,49 @@ $(function() {
     if (options['add-click-callback'] === undefined) {
       options['add-click-callback'] = _.identity;
     }
-    var diameter = $ring.innerWidth();
-    var clockwise = $ring.hasClass('clockwise');
-    var radius = diameter / 2;
-    var children = $ring.children();
-    var size = $ring.attr('data-ring-size');
-    var count = size === undefined ? children.length : parseInt(size);
-    var theta = (clockwise ? 1 : -1) * 2 * Math.PI / count;
+
+    // create shallow copy of array
+    options.data = _.clone(window[options.data]);
+    options['original-data-length'] = options.data.length;
+
+    // add Add objects to array
+    var counter = options['add-count'];
+    if (options['ring-fill'] === true) {
+      counter = options['ring-size'] - options['original-data-length'] % options['ring-size'];
+    }
+    for (var i = 0; i < counter; ++i) {
+      options.data.push({ "type":["add"] });
+    }
+    options['data-length'] = options.data.length;
+
+    if (options['ring-size'] <= 0) {
+      options['ring-size'] = options['data-length'];
+    }
+
+    var radius = $ring.innerWidth() / 2;
+    var theta = (options['clockwise'] === true ? 1 : -1) * 2 * Math.PI / options['ring-size'];
     var thetaOffset = -(Math.PI / 2);
-    children.each(function (index, node) {
-      var offset = $(node).outerWidth() / 2;
+
+    // generate mark-up
+    _.each(options.data, function (element, index) {
+      element['type'].push('card');
+      var $node = null;
+      if (_.contains(element.type, 'add')) {
+        // Add button
+        $node = $('<button>', { class: element['type'].join(' ') });
+        $node.click(function (event) {
+          window[options['add-click-callback']]($node);
+        });
+      } else {
+        // data node
+        $node = $('<img>', { class: element['type'].join(' '), src: element['img-uri'], alt: element['title'] });
+      }
+      $ring.append($node);
+      var offset = $node.outerWidth() / 2;
       var x = (radius - offset) + (radius * Math.cos(thetaOffset + (theta * (index + 1))));
       var y = (radius - offset) + (radius * Math.sin(thetaOffset + (theta * (index + 1))));
-      $(node).css('left', x);
-      $(node).css('top', y);
+      $node.css('left', x);
+      $node.css('top', y);
     });
   });
 });
