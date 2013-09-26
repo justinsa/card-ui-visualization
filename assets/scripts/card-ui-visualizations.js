@@ -1,3 +1,33 @@
+'use-strict';
+/****************************************************************************
+* Card UI Visualizations v0.0.1
+* Justin W. Saunders (github: justinsa)
+* License: Apache License Version 2.0, January 2004 (http://www.apache.org/licenses/)
+* 
+* Data Set Object Format:
+*   {
+*     "type": ["class", ...],
+*     "img-uri": "uri/to/img/src",
+*     "title": "object title",
+*     "html-description": "descriptive content"
+*   }
+* Value Description:
+*   "type" :=
+*     There is only one value that has a special meaning in the type array: "add".
+*     "add" is used internally to specify Add button placement in the visualization.
+*     You can use this to your advantage if you want to specify Add button placement.
+*     All values in the type array are appended to the class attribute of the mark-up.
+*   "img-uri" :=
+*     This is the location of the image source for the card. The value is directly set
+*     as the src attribute of the img tag.
+*   "title" :=
+*     This is the title for the card. The value is used as the alt attribute of the img
+*     tag and as the header of the element's popover.
+*   "html-description" :=
+*     This is an unsafe HTML description for the card. The value is presented as the
+*     body of the element's popover.
+*
+****************************************************************************/
 $(function() {
   $('.card-block').each(function () {
     var $block = $(this);
@@ -60,6 +90,17 @@ $(function() {
       } else {
         // data node
         $node = $('<img>', { class: element['type'].join(' '), src: element['img-uri'], alt: element['title'] });
+        if (element['title'] && element['html-description']) {
+          // add Bootstrap popover if there is a description provided
+          $node.popover({
+            animation: true,
+            content: element['html-description'],
+            html: true,
+            placement: 'auto',
+            title: element['title'],
+            trigger: 'hover'
+          });
+        }
       }
       if (options['stack'] === true) {
         if (options['stack-descend'] === false) {
@@ -121,6 +162,17 @@ $(function() {
       } else {
         // data node
         $node = $('<img>', { class: element['type'].join(' '), src: element['img-uri'], alt: element['title'] });
+        if (element['title'] && element['html-description']) {
+          // add Bootstrap popover if there is a description provided
+          $node.popover({
+            animation: true,
+            content: element['html-description'],
+            html: true,
+            placement: 'auto',
+            title: element['title'],
+            trigger: 'hover'
+          });
+        }
       }
       $ring.append($node);
       var offset = $node.outerWidth() / 2;
