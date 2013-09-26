@@ -17,14 +17,35 @@ $(function() {
     if (options['add-click-callback'] === undefined) {
       options['add-click-callback'] = _.identity;
     }
-    options.data = window[options.data];
+    
+    // create shallow copy of array
+    options.data = _.clone(window[options.data]);
+
+    // add Add objects to array
+    var counter = options['add-count'];
+    if (options['row-fill'] === true) {
+      counter = options['row-size'] - options.data.length % options['row-size'];
+    }
+    for (var i = 0; i < counter; ++i) {
+      options.data.push({ "type":["add"] });
+    }
+
+    // generate the mark-up
     var $row = null;
     _.each(options.data, function (element, index) {
       if (index % options['row-size'] === 0) {
         $row = $('<div>', { class: 'card-block-row' });
         $block.append($row);
       }
-      $row.append($('<img>', { class: 'card ' + element['type'].join(' '), src: element['img-uri'], alt: element['title'] }));
+      if (_.contains(element.type, 'add')) {
+        var $button = $('<button>', { class: 'card add' });
+        $button.click(function (event) {
+          window[options['add-click-callback']]($button);
+        });
+        $row.append($button);
+      } else {
+        $row.append($('<img>', { class: 'card ' + element['type'].join(' '), src: element['img-uri'], alt: element['title'] }));
+      }
     });
   });
 
