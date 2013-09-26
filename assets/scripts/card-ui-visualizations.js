@@ -1,42 +1,51 @@
 $(function() {
-  var CARD_DATA_TEMPLATE = '<img class="%s" src="%s" alt="%s" />';
-  var CARD_ADD_TEMPLATE = '<a class="card add" href="%s"></a>';
-
-  $('.card-block').each(function (index, block) {
-    var block = $(this);
+  $('.card-block').each(function () {
+    var $block = $(this);
     var options = {
-      'add-count': block.attr('add-count') ? parseInt(block.attr('add-count')) : 1,
-      'row-fill': block.hasClass('row-fill'),
-      'row-size': block.attr('data-row-size') ? parseInt(block.attr('data-row-size')) : 10,
-      'stack': block.hasClass('stack'),
-      'stack-descend': block.hasClass('stack-descend'),
-      'data': block.attr('data-set')
+      'add-click-callback': $block.attr('data-add-click-callback'),
+      'add-count': $block.attr('add-count') ? parseInt($block.attr('add-count')) : 1,
+      'row-fill': $block.hasClass('row-fill'),
+      'row-size': $block.attr('data-row-size') ? parseInt($block.attr('data-row-size')) : 10,
+      'stack': $block.hasClass('stack'),
+      'stack-descend': $block.hasClass('stack-descend'),
+      'data': $block.attr('data-set')
     };
     if (options.data === undefined) {
       // no data set provided ergo nothing to display
       return;
     }
+    if (options['add-click-callback'] === undefined) {
+      options['add-click-callback'] = _.identity;
+    }
     options.data = window[options.data];
-    var block = $(this);
-    _.each(options.data, function (element) {
-
+    var $row = null;
+    _.each(options.data, function (element, index) {
+      if (index % options['row-size'] === 0) {
+        $row = $('<div>', { class: 'card-block-row' });
+        $block.append($row);
+      }
+      $row.append($('<img>', { class: 'card ' + element['type'].join(' '), src: element['img-uri'], alt: element['title'] }));
     });
   });
 
-  $('.card-ring').each(function (index, ring) {
-    ring = $(ring);
+  $('.card-ring').each(function () {
+    $ring = $(this);
     var options = {
-      'add-count': ring.attr('add-count') ? parseInt(ring.attr('add-count')) : 1,
-      'clockwise': ring.hasClass('clockwise'),
-      'ring-fill': ring.hasClass('ring-fill'),
-      'ring-size': ring.attr('data-ring-size') ? parseInt(ring.attr('data-ring-size')) : 0,
-      'data': ring.attr('data-set')
+      'add-click-callback': $ring.attr('data-add-click-callback'),
+      'add-count': $ring.attr('add-count') ? parseInt($ring.attr('add-count')) : 1,
+      'clockwise': $ring.hasClass('clockwise'),
+      'ring-fill': $ring.hasClass('ring-fill'),
+      'ring-size': $ring.attr('data-ring-size') ? parseInt($ring.attr('data-ring-size')) : 0,
+      'data': $ring.attr('data-set')
     };
-    var diameter = ring.innerWidth();
-    var clockwise = ring.hasClass('clockwise');
+    if (options['add-click-callback'] === undefined) {
+      options['add-click-callback'] = _.identity;
+    }
+    var diameter = $ring.innerWidth();
+    var clockwise = $ring.hasClass('clockwise');
     var radius = diameter / 2;
-    var children = ring.children();
-    var size = ring.attr('data-ring-size');
+    var children = $ring.children();
+    var size = $ring.attr('data-ring-size');
     var count = size === undefined ? children.length : parseInt(size);
     var theta = (clockwise ? 1 : -1) * 2 * Math.PI / count;
     var thetaOffset = -(Math.PI / 2);

@@ -25,7 +25,7 @@
       <li><code>row-fill: true</code></li>
     </ul>
     <script type="text/javascript">
-      window['example1'] = [
+      var example1 = [
         { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
         { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
         { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
@@ -33,8 +33,11 @@
         { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
         { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" }
       ];
+      var addClick = function () {
+        alert('You clicked an Add button!');
+      }
     </script>
-    <div class="card-block row-fill" data-row-size="8" data-set="example1"></div>
+    <div class="card-block row-fill" data-row-size="8" data-set="example1" data-add-click-callback="addClick"></div>
     <h3>Example: Multiple Rows</h3>
     <ul>
       <li><code>row-size: 8</code></li>
@@ -55,7 +58,7 @@
       <div class="card-block-row">
         <img class="card complete" src="assets/img/face-jason.jpg" alt="Jason" />
         <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-        <a class="card add" href="#"></a>
+        <button class="card add" onclick="addClick"></button>
       </div>
     </div>
     <h3>Example: Stacked Single Row (Ascending)</h3>
@@ -78,11 +81,11 @@
         <img class="card complete" style="left: calc(26px * 8);" src="assets/img/face-jason.jpg" alt="Jason" />
         <img class="card incomplete" style="left: calc(26px * 9);" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
         <img class="card incomplete" style="left: calc(26px * 10);" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-        <a class="card add" style="margin-left: calc(5px + 26px * 12);" href="#"></a>
-        <a class="card add" href="#"></a>
-        <a class="card add" href="#"></a>
-        <a class="card add" href="#"></a>
-        <a class="card add" href="#"></a>
+        <button class="card add" style="margin-left: calc(5px + 26px * 12);" onclick="addClick"></button>
+        <button class="card add" onclick="addClick"></button>
+        <button class="card add" onclick="addClick"></button>
+        <button class="card add" onclick="addClick"></button>
+        <button class="card add" onclick="addClick"></button>
       </div>
     </div>
     <h3>Example: Stacked Single Row (Descending)</h3>
@@ -106,8 +109,8 @@
         <img class="card complete descend" style="left: calc(26px * 8); z-index: 2;" src="assets/img/face-jason.jpg" alt="Jason" />
         <img class="card incomplete descend" style="left: calc(26px * 9); z-index: 1;" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
         <img class="card incomplete descend" style="left: calc(26px * 10); z-index: 0;" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-        <a class="card add" style="margin-left: calc(5px + 26px * 12);" href="#"></a>
-        <a class="card add" href="#"></a>
+        <button class="card add" style="margin-left: calc(5px + 26px * 12);" onclick="addClick"></button>
+        <button class="card add" onclick="addClick"></button>
       </div>
     </div>
   </section>
@@ -133,9 +136,9 @@
       <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
       <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
       <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-      <a class="card add" href="#"></a>
-      <a class="card add" href="#"></a>
-      <a class="card add" href="#"></a>
+      <button class="card add" onclick="addClick"></button>
+      <button class="card add" onclick="addClick"></button>
+      <button class="card add" onclick="addClick"></button>
     </div>
     <h3>Example: Dynamic Ring</h3>
     <ul>
@@ -151,9 +154,9 @@
       <img class="card complete" src="assets/img/face-tom.jpg" alt="Tom" />
       <img class="card complete" src="assets/img/face-emily.jpg" alt="Emily" />
       <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-      <a class="card add" href="#"></a>
-      <a class="card add" href="#"></a>
-      <a class="card add" href="#"></a>
+      <button class="card add" onclick="addClick"></button>
+      <button class="card add" onclick="addClick"></button>
+      <button class="card add" onclick="addClick"></button>
     </div>
     <h3>Example: Progressive Ring</h3>
     <ul>
@@ -170,9 +173,9 @@
       <img class="card complete" src="assets/img/face-tom.jpg" alt="Tom" />
       <img class="card complete" src="assets/img/face-emily.jpg" alt="Emily" />
       <img class="card incomplete" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-      <a class="card add" href="#"></a>
-      <a class="card add" href="#"></a>
-      <a class="card add" href="#"></a>
+      <button class="card add" onclick="addClick"></button>
+      <button class="card add" onclick="addClick"></button>
+      <button class="card add" onclick="addClick"></button>
     </div>
   </section>
 </body>
