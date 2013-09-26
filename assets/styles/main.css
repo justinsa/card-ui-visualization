@@ -17,7 +17,7 @@
   position: relative;
   width: 360px;
 }
-.card-block img.card, .card-ring .card {
+.card-block .card, .card-ring .card {
   border-radius: 5px;
   border: solid 1px black;
   cursor: hand;
@@ -28,41 +28,33 @@
   vertical-align: middle;
   width: 50px;
 }
-.card-block img.card:nth-child(1n+2) {
+.card-block .card:nth-child(1n+2) {
   margin-left: 5px;
-}
-.card-block.stack > .card-block-row {
-  position: relative;
-}
-.card-block.stack img.card {
-  margin-left: 0px;
-  position: absolute;
-}
-.card-block.stack img.card:hover {
-  height: 56px;
-  text-decoration: none;
-  top: -3px;
-  width: 56px;
-  z-index: 9999 !important;
 }
 .card.add {
   background-color: #008000;
-  border-radius: 5px;
-  border: solid 1px black;
   color: white;
-  display: inline-block;
   font-family: arial, sans-serif;
   font-size: 24px;
-  height: 50px;
   line-height: 50px;
-  margin-left: 5px;
   text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  width: 50px;
 }
 .card.add:after {
   content: '+';
+}
+.card-block.stack > .card-block-row {
+  height: 50px;
+  position: relative;
+}
+.card-block.stack .card {
+  margin-left: 0px;
+  position: absolute;
+}
+.card-block.stack .card:hover {
+  height: 56px;
+  top: -3px;
+  width: 56px;
+  z-index: 9999 !important;
 }
 .card-ring > .card {
   border-radius: 25px;

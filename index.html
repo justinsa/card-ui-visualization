@@ -45,6 +45,19 @@
         { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Tom Kuhn", "html-description":"Jason Schneekloth" },
         { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" }
       ];
+      var example3 = [
+        { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
+        { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
+        { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
+        { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
+        { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
+        { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Tom Kuhn", "html-description":"Emily" },
+        { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Tom Kuhn", "html-description":"Shane Mc Hugh" },
+        { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Tom Kuhn", "html-description":"Katrina" },
+        { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Tom Kuhn", "html-description":"Jason Schneekloth" },
+        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" },
+        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-02" }
+      ];
       var addClick = function () {
         alert('You clicked an Add button!');
       }
@@ -63,27 +76,9 @@
       <li><code>row-fill: true</code></li>
       <li><code>stack: true</code></li>
       <li><code>stack-descend: false</code> <em>(default)</em></li>
+      <li><code>stack-card-offset: 26</code></li>
     </ul>
-    <div class="card-block stack row-fill" data-row-size="16">
-      <div class="card-block-row">
-        <img class="card complete" style="left: calc(26px * 0);" src="assets/img/face-ghisly.jpg" alt="Ghisly" />
-        <img class="card complete" style="left: calc(26px * 1);" src="assets/img/face-brent.jpg" alt="Brent" />
-        <img class="card complete" style="left: calc(26px * 2);" src="assets/img/face-rhea.jpg" alt="Rhea" />
-        <img class="card complete" style="left: calc(26px * 3);" src="assets/img/face-evelyn.jpg" alt="Evelyn" />
-        <img class="card complete" style="left: calc(26px * 4);" src="assets/img/face-tom.jpg" alt="Tom" />
-        <img class="card complete" style="left: calc(26px * 5);" src="assets/img/face-emily.jpg" alt="Emily" />
-        <img class="card complete" style="left: calc(26px * 6);" src="assets/img/face-shane.jpg" alt="Shane" />
-        <img class="card complete" style="left: calc(26px * 7);" src="assets/img/face-katrina.jpg" alt="Katrina" />
-        <img class="card complete" style="left: calc(26px * 8);" src="assets/img/face-jason.jpg" alt="Jason" />
-        <img class="card incomplete" style="left: calc(26px * 9);" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-        <img class="card incomplete" style="left: calc(26px * 10);" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-        <button class="card add" style="margin-left: calc(5px + 26px * 12);" onclick="addClick"></button>
-        <button class="card add" onclick="addClick"></button>
-        <button class="card add" onclick="addClick"></button>
-        <button class="card add" onclick="addClick"></button>
-        <button class="card add" onclick="addClick"></button>
-      </div>
-    </div>
+    <div class="card-block stack row-fill" data-row-size="16" data-set="example3" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
     <h3>Example: Stacked Single Row (Descending)</h3>
     <ul>
       <li><code>row-size: 16</code></li>
@@ -91,24 +86,9 @@
       <li><code>add-count: 2</code></li>
       <li><code>stack: true</code></li>
       <li><code>stack-descend: true</code></li>
+      <li><code>stack-card-offset: 26</code></li>
     </ul>
-    <div class="card-block stack stack-descend" data-row-size="16" data-add-count="2">
-      <div class="card-block-row">
-        <img class="card complete descend" style="left: calc(26px * 0); z-index: 10;" src="assets/img/face-ghisly.jpg" alt="Ghisly" />
-        <img class="card complete descend" style="left: calc(26px * 1); z-index: 9" src="assets/img/face-brent.jpg" alt="Brent" />
-        <img class="card complete descend" style="left: calc(26px * 2); z-index: 8;" src="assets/img/face-rhea.jpg" alt="Rhea" />
-        <img class="card complete descend" style="left: calc(26px * 3); z-index: 7;" src="assets/img/face-evelyn.jpg" alt="Evelyn" />
-        <img class="card complete descend" style="left: calc(26px * 4); z-index: 6;" src="assets/img/face-tom.jpg" alt="Tom" />
-        <img class="card complete descend" style="left: calc(26px * 5); z-index: 5;" src="assets/img/face-emily.jpg" alt="Emily" />
-        <img class="card complete descend" style="left: calc(26px * 6); z-index: 4;" src="assets/img/face-shane.jpg" alt="Shane" />
-        <img class="card complete descend" style="left: calc(26px * 7); z-index: 3;" src="assets/img/face-katrina.jpg" alt="Katrina" />
-        <img class="card complete descend" style="left: calc(26px * 8); z-index: 2;" src="assets/img/face-jason.jpg" alt="Jason" />
-        <img class="card incomplete descend" style="left: calc(26px * 9); z-index: 1;" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-        <img class="card incomplete descend" style="left: calc(26px * 10); z-index: 0;" src="assets/img/face-invited.gif" alt="john.doe@gmail.com" />
-        <button class="card add" style="margin-left: calc(5px + 26px * 12);" onclick="addClick"></button>
-        <button class="card add" onclick="addClick"></button>
-      </div>
-    </div>
+    <div class="card-block stack stack-descend" data-row-size="16" data-set="example3" data-add-count="2" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
   </section>
 
   <section>

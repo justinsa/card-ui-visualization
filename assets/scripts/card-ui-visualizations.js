@@ -3,10 +3,11 @@ $(function() {
     var $block = $(this);
     var options = {
       'add-click-callback': $block.attr('data-add-click-callback'),
-      'add-count': $block.attr('add-count') ? parseInt($block.attr('add-count')) : 1,
+      'add-count': $block.attr('data-add-count') ? parseInt($block.attr('data-add-count')) : 1,
       'row-fill': $block.hasClass('row-fill'),
       'row-size': $block.attr('data-row-size') ? parseInt($block.attr('data-row-size')) : 10,
       'stack': $block.hasClass('stack'),
+      'stack-card-offset': $block.attr('data-stack-card-offset') ? parseInt($block.attr('data-stack-card-offset')) : 0,
       'stack-descend': $block.hasClass('stack-descend'),
       'data': $block.attr('data-set')
     };
@@ -20,15 +21,20 @@ $(function() {
     
     // create shallow copy of array
     options.data = _.clone(window[options.data]);
+    options['original-data-length'] = options.data.length;
 
     // add Add objects to array
     var counter = options['add-count'];
     if (options['row-fill'] === true) {
-      counter = options['row-size'] - options.data.length % options['row-size'];
+      counter = options['row-size'] - options['original-data-length'] % options['row-size'];
+      if (counter <= 0) {
+        counter = options['add-count'];
+      }
     }
     for (var i = 0; i < counter; ++i) {
       options.data.push({ "type":["add"] });
     }
+    options['data-length'] = options.data.length;
 
     // generate the mark-up
     var $row = null;
@@ -36,16 +42,33 @@ $(function() {
       if (index % options['row-size'] === 0) {
         $row = $('<div>', { class: 'card-block-row' });
         $block.append($row);
+        if (options['stack'] === true) {
+          $block.append($('<div>', { class: 'clearfix' }));
+        }
       }
+      element['type'].push('card');
+      if (options['stack-descend'] === true) {
+        element['type'].push('descend');
+      }
+      var $node = null;
       if (_.contains(element.type, 'add')) {
-        var $button = $('<button>', { class: 'card add' });
-        $button.click(function (event) {
-          window[options['add-click-callback']]($button);
+        // Add button
+        $node = $('<button>', { class: element['type'].join(' ') });
+        $node.click(function (event) {
+          window[options['add-click-callback']]($node);
         });
-        $row.append($button);
       } else {
-        $row.append($('<img>', { class: 'card ' + element['type'].join(' '), src: element['img-uri'], alt: element['title'] }));
+        // data node
+        $node = $('<img>', { class: element['type'].join(' '), src: element['img-uri'], alt: element['title'] });
       }
+      if (options['stack'] === true) {
+        if (options['stack-descend'] === false) {
+          $node.attr('style', _.str.sprintf('left: calc(%dpx * %d);', options['stack-card-offset'], index));
+        } else {
+          $node.attr('style', _.str.sprintf('left: calc(%dpx * %d); z-index: %d', options['stack-card-offset'], index, (options['data-length'] - 1 - index)));
+        }
+      }
+      $row.append($node);
     });
   });
 
