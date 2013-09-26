@@ -104,9 +104,9 @@ $(function() {
       }
       if (options['stack'] === true) {
         if (options['stack-descend'] === false) {
-          $node.attr('style', _.str.sprintf('left: calc(%dpx * %d);', options['stack-card-offset'], index));
+          $node.attr('style', _.str.sprintf('left: %dpx;', (options['stack-card-offset'] * index)));
         } else {
-          $node.attr('style', _.str.sprintf('left: calc(%dpx * %d); z-index: %d', options['stack-card-offset'], index, (options['data-length'] - 1 - index)));
+          $node.attr('style', _.str.sprintf('left: %dpx; z-index: %d', (options['stack-card-offset'] * index), (options['data-length'] - 1 - index)));
         }
       }
       $row.append($node);
