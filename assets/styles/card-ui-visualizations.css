@@ -1,6 +1,9 @@
 @import url('normalize.css');
 @import url('bootstrap-3.0.0.min.css');
 
+a, a:link, a:hover, a:focus, a:visited: {
+  text-decoration: none;
+}
 .card-block {
   margin: 0px;
   padding: 0px;

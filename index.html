@@ -3,133 +3,168 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <link type="text/css" rel="stylesheet" href="assets/styles/main.css" />
+  <link type="text/css" rel="stylesheet" href="assets/styles/card-ui-visualizations.css" />
   <script type="text/javascript" src="assets/scripts/jquery-1.10.2.min.js" /></script>
   <script type="text/javascript" src="assets/scripts/underscore-1.5.2.min.js" /></script>
   <script type="text/javascript" src="assets/scripts/underscore.string-2.3.0.min.js" /></script>
   <script type="text/javascript" src="assets/scripts/bootstrap-3.0.0.min.js" /></script>
   <script type="text/javascript" src="assets/scripts/card-ui-visualizations.js" /></script>
+  <script type="text/javascript">
+    var dataSet1 = [
+      { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
+      { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
+      { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
+      { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
+      { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
+      { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" }
+    ];
+    var dataSet2 = [
+      { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
+      { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
+      { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
+      { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
+      { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
+      { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Emily", "html-description":"Emily" },
+      { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Shane Mc Hugh", "html-description":"Shane Mc Hugh" },
+      { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Katrina", "html-description":"Katrina" },
+      { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Jason Schneekloth", "html-description":"Jason Schneekloth" },
+      { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" }
+    ];
+    var dataSet3 = [
+      { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
+      { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
+      { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
+      { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
+      { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
+      { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Emily", "html-description":"Emily" },
+      { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Shane Mc Hugh", "html-description":"Shane Mc Hugh" },
+      { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Katrina", "html-description":"Katrina" },
+      { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Jason Schneekloth", "html-description":"Jason Schneekloth" },
+      { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" },
+      { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-02" }
+    ];
+    var dataSet4 = [
+      { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
+      { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
+      { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
+      { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
+      { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
+      { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Emily", "html-description":"Emily" },
+      { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Shane Mc Hugh", "html-description":"Shane Mc Hugh" },
+      { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Katrina", "html-description":"Katrina" },
+      { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Jason Schneekloth", "html-description":"Jason Schneekloth" },
+      { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" },
+      { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-02" },
+      { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-03" }
+    ];
+
+    var addClick = function () {
+      alert('You clicked an Add button!');
+    }
+  </script>
+  <script type="text/javascript">
+    $(function() {
+      $('.card-block').each(function() { window['card-ui-visualizations']['card-block'](this); });
+      $('.card-ring').each(function() { window['card-ui-visualizations']['card-ring'](this); });
+    });
+  </script>
 </head>
 <body>
   <!--[if lte IE 9]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
 
-  <h1>Card UI Visualizations</h1>
-
   <section>
-    <h2>Card Block</h2>
-    <h3>Example: Single Row</h3>
-    <ul>
-      <li><code>row-size: 8</code></li>
-      <li><code>row-fill: true</code></li>
-    </ul>
-    <script type="text/javascript">
-      var dataSet1 = [
-        { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
-        { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
-        { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
-        { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
-        { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
-        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" }
-      ];
-      var dataSet2 = [
-        { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
-        { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
-        { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
-        { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
-        { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
-        { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Emily", "html-description":"Emily" },
-        { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Shane Mc Hugh", "html-description":"Shane Mc Hugh" },
-        { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Katrina", "html-description":"Katrina" },
-        { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Jason Schneekloth", "html-description":"Jason Schneekloth" },
-        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" }
-      ];
-      var dataSet3 = [
-        { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
-        { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
-        { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
-        { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
-        { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
-        { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Emily", "html-description":"Emily" },
-        { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Shane Mc Hugh", "html-description":"Shane Mc Hugh" },
-        { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Katrina", "html-description":"Katrina" },
-        { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Jason Schneekloth", "html-description":"Jason Schneekloth" },
-        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" },
-        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-02" }
-      ];
-      var dataSet4 = [
-        { "type":["complete"], "img-uri":"assets/img/face-ghisly.jpg", "title":"Ghisly Echezuria", "html-description":"Ghisly Echezuria" },
-        { "type":["complete"], "img-uri":"assets/img/face-brent.jpg", "title":"Brent", "html-description":"Brent" },
-        { "type":["complete"], "img-uri":"assets/img/face-rhea.jpg", "title":"Rhea Bird", "html-description":"Rhea Bird" },
-        { "type":["complete"], "img-uri":"assets/img/face-evelyn.jpg", "title":"Evelyn Salazar", "html-description":"Evelyn Salazar" },
-        { "type":["complete"], "img-uri":"assets/img/face-tom.jpg", "title":"Tom Kuhn", "html-description":"Tom Kuhn" },
-        { "type":["complete"], "img-uri":"assets/img/face-emily.jpg", "title":"Emily", "html-description":"Emily" },
-        { "type":["complete"], "img-uri":"assets/img/face-shane.jpg", "title":"Shane Mc Hugh", "html-description":"Shane Mc Hugh" },
-        { "type":["complete"], "img-uri":"assets/img/face-katrina.jpg", "title":"Katrina", "html-description":"Katrina" },
-        { "type":["complete"], "img-uri":"assets/img/face-jason.jpg", "title":"Jason Schneekloth", "html-description":"Jason Schneekloth" },
-        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-01" },
-        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-02" },
-        { "type":["incomplete"], "img-uri":"assets/img/face-invited.gif", "title":"john.doe@gmail.com", "html-description":"Invitation sent on 2013-09-03" }
-      ];
-
-      var addClick = function () {
-        alert('You clicked an Add button!');
-      }
-    </script>
-    <div class="card-block row-fill" data-row-size="8" data-set="dataSet1" data-add-click-callback="addClick"></div>
-    <h3>Example: Multiple Rows</h3>
-    <ul>
-      <li><code>row-size: 8</code></li>
-      <li><code>row-fill: false</code> <em>(default)</em></li>
-      <li><code>add-count: 1</code> <em>(default)</em></li>
-    </ul>
-    <div class="card-block" data-row-size="8" data-set="dataSet2" data-add-click-callback="addClick"></div>
-    <h3>Example: Stacked Single Row (Ascending)</h3>
-    <ul>
-      <li><code>row-size: 16</code></li>
-      <li><code>row-fill: true</code></li>
-      <li><code>stack: true</code></li>
-      <li><code>stack-descend: false</code> <em>(default)</em></li>
-      <li><code>stack-card-offset: 26</code></li>
-    </ul>
-    <div class="card-block stack row-fill" data-row-size="16" data-set="dataSet3" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
-    <h3>Example: Stacked Single Row (Descending)</h3>
-    <ul>
-      <li><code>row-size: 16</code></li>
-      <li><code>row-fill: false</code> <em>(default)</em></li>
-      <li><code>add-count: 2</code></li>
-      <li><code>stack: true</code></li>
-      <li><code>stack-descend: true</code></li>
-      <li><code>stack-card-offset: 26</code></li>
-    </ul>
-    <div class="card-block stack stack-descend" data-row-size="16" data-set="dataSet3" data-add-count="2" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
+    <div class="container">
+      <h1>Card UI Visualizations</h1>
+      <h2>Library Requirements</h2>
+      <ul>
+        <li>jquery 1.10.2</li>
+        <li>underscore 1.5.2</li>
+        <li>underscore string 2.3.0</li>
+        <li>bootstrap 3.0.0</li>
+      </ul>
+      <h2>Download v1.0.0</h2>
+      <p>
+        <a class="btn btn-success btn-large" href="assets/scripts/card-ui-visualizations.js">card-ui-visualizations.<strong>JS</strong></a>
+        <a class="btn btn-success btn-large" href="assets/styles/card-ui-visualizations.css">card-ui-visualizations.<strong>CSS</strong></a>
+      </p>
+      <h2>Framework Versions</h2>
+      <div class="row">
+        <div class="col-sm-4 col-3 col-lg-2 text-center">
+          <a href="index-angularjs.html"><img src="assets/img/angularjs-logo.png" width="56" height="56" alt="AngularJS Logo" /><br/>AngularJS</a>
+        </div>
+        <div class="col-sm-4 col-3 col-lg-2 text-center">
+          <a href="index-emberjs.html"><img src="assets/img/emberjs-logo.png" width="56" height="56" alt="EmberJS Logo" /><br/>EmberJS</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section>
-    <h2>Card Ring</h2>
-    <h3>Example: Filled Ring</h3>
-    <ul>
-      <li><code>ring-size: 15</code></li>
-      <li><code>ring-fill: true</code></li>
-      <li><code>clockwise: true</code></li>
-    </ul>
-    <div class="card-ring clockwise ring-fill" data-ring-size="15" data-set="dataSet4"></div>
-    <h3>Example: Dynamic Ring</h3>
-    <ul>
-      <li><code>ring-size: dynamic</code> <em>(default)</em></li>
-      <li><code>add-count: 3</code></li>
-      <li><code>clockwise: false</code> <em>(default)</em></li>
-    </ul>
-    <div class="card-ring" data-add-count="3" data-set="dataSet1"></div>
-    <h3>Example: Progressive Ring</h3>
-    <ul>
-      <li><code>ring-size: 16</code></li>
-      <li><code>ring-fill: false</code> <em>(default)</em></li>
-      <li><code>add-count: 3</code></li>
-      <li><code>clockwise: false</code> <em>(default)</em></li>
-    </ul>
-    <div class="card-ring" data-ring-size="16" data-add-count="3" data-set="dataSet1"></div>
+    <div class="container">
+      <h2>Card Block</h2>
+      <h3>Example: Single Row</h3>
+      <ul>
+        <li><code>row-size: 8</code></li>
+        <li><code>row-fill: true</code></li>
+      </ul>
+      <div class="card-block row-fill" data-row-size="8" data-set="dataSet1" data-add-click-callback="addClick"></div>
+      <h3>Example: Multiple Rows</h3>
+      <ul>
+        <li><code>row-size: 8</code></li>
+        <li><code>row-fill: false</code> <em>(default)</em></li>
+        <li><code>add-count: 1</code> <em>(default)</em></li>
+      </ul>
+      <div class="card-block" data-row-size="8" data-set="dataSet2" data-add-click-callback="addClick"></div>
+      <h3>Example: Stacked Single Row (Ascending)</h3>
+      <ul>
+        <li><code>row-size: 16</code></li>
+        <li><code>row-fill: true</code></li>
+        <li><code>stack: true</code></li>
+        <li><code>stack-descend: false</code> <em>(default)</em></li>
+        <li><code>stack-card-offset: 26</code></li>
+      </ul>
+      <div class="card-block stack row-fill" data-row-size="16" data-set="dataSet3" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
+      <h3>Example: Stacked Single Row (Descending)</h3>
+      <ul>
+        <li><code>row-size: 16</code></li>
+        <li><code>row-fill: false</code> <em>(default)</em></li>
+        <li><code>add-count: 2</code></li>
+        <li><code>stack: true</code></li>
+        <li><code>stack-descend: true</code></li>
+        <li><code>stack-card-offset: 26</code></li>
+      </ul>
+      <div class="card-block stack stack-descend" data-row-size="16" data-set="dataSet3" data-add-count="2" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Card Ring</h2>
+      <h3>Example: Filled Ring</h3>
+      <ul>
+        <li><code>ring-size: 15</code></li>
+        <li><code>ring-fill: true</code></li>
+        <li><code>clockwise: true</code></li>
+      </ul>
+      <div class="card-ring clockwise ring-fill" data-ring-size="15" data-set="dataSet4"></div>
+      <h3>Example: Dynamic Ring</h3>
+      <ul>
+        <li><code>ring-size: dynamic</code> <em>(default)</em></li>
+        <li><code>add-count: 3</code></li>
+        <li><code>clockwise: false</code> <em>(default)</em></li>
+      </ul>
+      <div class="card-ring" data-add-count="3" data-set="dataSet1"></div>
+      <h3>Example: Progressive Ring</h3>
+      <ul>
+        <li><code>ring-size: 16</code></li>
+        <li><code>ring-fill: false</code> <em>(default)</em></li>
+        <li><code>add-count: 3</code></li>
+        <li><code>clockwise: false</code> <em>(default)</em></li>
+      </ul>
+      <div class="card-ring" data-ring-size="16" data-add-count="3" data-set="dataSet1"></div>
+    </div>
   </section>
 </body>
 </html>

@@ -28,9 +28,9 @@
 *     body of the element's popover.
 *
 ****************************************************************************/
-$(function() {
-  $('.card-block').each(function () {
-    var $block = $(this);
+window['card-ui-visualizations'] = {
+  'card-block': function (element) {
+    var $block = $(element);
     var options = {
       'add-click-callback': $block.attr('data-add-click-callback'),
       'add-count': $block.attr('data-add-count') ? parseInt($block.attr('data-add-count')) : 1,
@@ -111,10 +111,10 @@ $(function() {
       }
       $row.append($node);
     });
-  });
+  },
 
-  $('.card-ring').each(function () {
-    $ring = $(this);
+  'card-ring': function (element) {
+    $ring = $(element);
     var options = {
       'add-click-callback': $ring.attr('data-add-click-callback'),
       'add-count': $ring.attr('data-add-count') ? parseInt($ring.attr('data-add-count')) : 1,
@@ -181,5 +181,5 @@ $(function() {
       $node.css('left', x);
       $node.css('top', y);
     });
-  });
-});
+  }
+};
