@@ -7,10 +7,9 @@
   <script type="text/javascript" src="assets/scripts/vendor/jquery-1.10.2.min.js" /></script>
   <script type="text/javascript" src="assets/scripts/vendor/underscore-1.5.2.min.js" /></script>
   <script type="text/javascript" src="assets/scripts/vendor/underscore.string-2.3.0.min.js" /></script>
-  <script type="text/javascript" src="assets/scripts/vendor/bootstrap-3.0.0.min.js" /></script>
-  <script type="text/javascript" src="assets/scripts/vendor/angular-1.0.8.js" /></script>
-  <script type="text/javascript" src="assets/scripts/vendor/angular-sanitize-1.0.8.js" /></script>
-  <script type="text/javascript" src="assets/scripts/vendor/angular-ui-bootstrap-tpls-0.6.0.js" /></script>
+  <script type="text/javascript" src="assets/scripts/vendor/angular-1.0.8.min.js" /></script>
+  <script type="text/javascript" src="assets/scripts/vendor/angular-sanitize-1.0.8.min.js" /></script>
+  <script type="text/javascript" src="assets/scripts/vendor/angular-ui-bootstrap-tpls-0.6.0.min.js" /></script>
   <script type="text/javascript" src="assets/scripts/card-ui-visualizations.js" /></script>
   <script type="text/javascript" src="assets/scripts/angular-card-ui-visualizations.js" /></script>
   <script type="text/javascript" src="assets/scripts/example-data.js"></script>
@@ -28,7 +27,7 @@
 
   <section>
     <div class="container">
-      <h1>Card UI Visualizations</h1>
+      <h1>Card UI Visualizations (for AngularJS)</h1>
       <div class="row">
         <div class="col-sm-6 col-6 col-lg-4">
           <h2>Download v1.0.0</h2>
@@ -45,16 +44,14 @@
             <li><a href="http://jquery.org/">jquery 1.10.2</li>
             <li><a href="http://underscorejs.org/">underscore</a> 1.5.2</li>
             <li><a href="http://epeli.github.io/underscore.string/">underscore string</a> 2.3.0</li>
-            <li><a href="http://getbootstrap.com/">bootstrap 3.0.0</li>
+            <li><a href="http://angularjs.org/">angular</a> 1.0.8</li>
+            <li><a href="http://angular-ui.github.io/bootstrap/">angular bootstrap</a> 0.6.0</li>
           </ul>
         </div>
         <div class="col-sm-6 col-6 col-lg-4">
           <h2>Framework Versions</h2>
           <div class="row">
-            <div class="col-sm-6 col-6 col-lg-6 text-center">
-              <a href="index-angularjs.html"><img src="assets/img/angularjs-logo.png" width="56" height="56" alt="AngularJS Logo" /><br/>AngularJS</a>
-            </div>
-            <div class="col-sm-6 col-6 col-lg-6 text-center">
+            <div class="col-lg-12">
               <a href="index-emberjs.html"><img src="assets/img/emberjs-logo.png" width="56" height="56" alt="EmberJS Logo" /><br/>EmberJS</a>
             </div>
           </div>
@@ -71,14 +68,14 @@
         <li><code>row-size: 8</code></li>
         <li><code>row-fill: true</code></li>
       </ul>
-      <div class="card-block row-fill" data-row-size="8" data-set="dataSet1" data-add-click-callback="addClick"></div>
+      <card-block data-row-fill="true" data-row-size="8" data-set="dataSet1" data-add-click-callback="addClick" />
       <h3>Example: Multiple Rows</h3>
       <ul>
         <li><code>row-size: 8</code></li>
         <li><code>row-fill: false</code> <em>(default)</em></li>
         <li><code>add-count: 1</code> <em>(default)</em></li>
       </ul>
-      <div class="card-block" data-row-size="8" data-set="dataSet2" data-add-click-callback="addClick"></div>
+      <card-block data-row-size="8" data-set="dataSet2" data-add-click-callback="addClick" />
       <h3>Example: Stacked Single Row (Ascending)</h3>
       <ul>
         <li><code>row-size: 16</code></li>
@@ -87,7 +84,7 @@
         <li><code>stack-descend: false</code> <em>(default)</em></li>
         <li><code>stack-card-offset: 26</code></li>
       </ul>
-      <div class="card-block stack row-fill" data-row-size="16" data-set="dataSet3" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
+      <card-block data-stack="true" data-row-fill="true" data-row-size="16" data-set="dataSet3" data-stack-card-offset="26" data-add-click-callback="addClick" />
       <h3>Example: Stacked Single Row (Descending)</h3>
       <ul>
         <li><code>row-size: 16</code></li>
@@ -97,7 +94,7 @@
         <li><code>stack-descend: true</code></li>
         <li><code>stack-card-offset: 26</code></li>
       </ul>
-      <div class="card-block stack stack-descend" data-row-size="16" data-set="dataSet3" data-add-count="2" data-stack-card-offset="26" data-add-click-callback="addClick"></div>
+      <card-block data-stack="true" data-stack-descend="true" data-row-size="16" data-set="dataSet3" data-add-count="2" data-stack-card-offset="26" data-add-click-callback="addClick" />
     </div>
   </section>
 
@@ -110,14 +107,14 @@
         <li><code>ring-fill: true</code></li>
         <li><code>clockwise: true</code></li>
       </ul>
-      <div class="card-ring clockwise ring-fill" data-ring-size="15" data-set="dataSet4"></div>
+      <card-ring data-clockwise="true" data-ring-fill="true" data-ring-size="15" data-set="dataSet4" />
       <h3>Example: Dynamic Ring</h3>
       <ul>
         <li><code>ring-size: dynamic</code> <em>(default)</em></li>
         <li><code>add-count: 3</code></li>
         <li><code>clockwise: false</code> <em>(default)</em></li>
       </ul>
-      <div class="card-ring" data-add-count="3" data-set="dataSet1"></div>
+      <card-ring data-add-count="3" data-set="dataSet1" />
       <h3>Example: Progressive Ring</h3>
       <ul>
         <li><code>ring-size: 16</code></li>
@@ -125,7 +122,7 @@
         <li><code>add-count: 3</code></li>
         <li><code>clockwise: false</code> <em>(default)</em></li>
       </ul>
-      <div class="card-ring" data-ring-size="16" data-add-count="3" data-set="dataSet1"></div>
+      <card-ring data-ring-size="16" data-add-count="3" data-set="dataSet1" />
     </div>
   </section>
 </body>
