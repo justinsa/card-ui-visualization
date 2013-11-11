@@ -1,38 +1,28 @@
 @import url('normalize.css');
 @import url('bootstrap-3.0.0.min.css');
 
-a, a:link, a:hover, a:focus, a:visited: {
+/* Base styles */
+a, a:link, a:hover, a:focus, a:visited {
   text-decoration: none;
 }
-.card-block {
-  margin: 0px;
-  padding: 0px;
+button:focus {
+	outline: none;
 }
-.card-block-row {
-  margin: 10px;
-}
-.card-ring {
-  border-radius: 180px;
-  border: solid 1px gray;
-  height: 360px;
-  margin: 10px auto;
-  padding: 0px;
-  position: relative;
-  width: 360px;
-}
+
+/* General card block and ring stylings */
 .card-block .card, .card-ring .card {
   border-radius: 5px;
   border: solid 1px black;
-  cursor: hand;
+  cursor: pointer;
   display: inline-block;
   height: 50px;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   vertical-align: middle;
   width: 50px;
 }
-.card-block .card:nth-child(1n+2) {
-  margin-left: 5px;
+.card:hover, .card:focus {
+  text-decoration: none;
 }
 .card.add {
   background-color: #008000;
@@ -45,12 +35,24 @@ a, a:link, a:hover, a:focus, a:visited: {
 .card.add:after {
   content: '+';
 }
+
+/* Card block stylings */
+.card-block {
+  margin: 0;
+  padding: 0;
+}
+.card-block-row {
+  margin: 10px;
+}
+.card-block .card:nth-child(1n+2) {
+  margin-left: 5px;
+}
 .card-block.stack > .card-block-row {
   height: 50px;
   position: relative;
 }
 .card-block.stack .card {
-  margin-left: 0px;
+  margin-left: 0;
   position: absolute;
 }
 .card-block.stack .card:hover {
@@ -59,12 +61,20 @@ a, a:link, a:hover, a:focus, a:visited: {
   width: 56px;
   z-index: 9999 !important;
 }
+
+/* Card ring stylings */
+.card-ring {
+  border-radius: 180px;
+  border: solid 1px gray;
+  height: 360px;
+  margin: 10px auto;
+  padding: 0;
+  position: relative;
+  width: 360px;
+}
 .card-ring > .card {
   border-radius: 25px;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   position: absolute;
-}
-.card:hover, .card:focus {
-  text-decoration: none;
 }
