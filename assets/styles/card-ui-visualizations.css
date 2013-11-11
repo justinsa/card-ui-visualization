@@ -8,9 +8,6 @@ a, a:link, a:hover, a:focus, a:visited: {
   margin: 0px;
   padding: 0px;
 }
-.card-block-row {
-  margin: 10px;
-}
 .card-ring {
   border-radius: 180px;
   border: solid 1px gray;
@@ -31,8 +28,8 @@ a, a:link, a:hover, a:focus, a:visited: {
   vertical-align: middle;
   width: 50px;
 }
-.card-block .card:nth-child(1n+2) {
-  margin-left: 5px;
+.card-block .card {
+	margin: 0 5px 5px 0;
 }
 .card.add {
   background-color: #008000;

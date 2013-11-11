@@ -33,7 +33,8 @@ window['card-ui-visualizations'] = {
     var $block = $(element);
     var options = {
       'add-click-callback': $block.attr('data-add-click-callback'),
-      'add-count': $block.attr('data-add-count') ? parseInt($block.attr('data-add-count')) : 1,
+      'add-count': $block.attr('data-add-count') ? parseInt($block.attr('data-add-count')) : null,
+			'dynamic-wrapping': $block.hasClass('dynamic-wrapping'),
       'row-fill': $block.hasClass('row-fill'),
       'row-size': $block.attr('data-row-size') ? parseInt($block.attr('data-row-size')) : 10,
       'stack': $block.hasClass('stack'),
@@ -54,13 +55,19 @@ window['card-ui-visualizations'] = {
     options['original-data-length'] = options.data.length;
 
     // add Add objects to array
-    var counter = options['add-count'];
-    if (options['row-fill'] === true) {
+		var counter;
+
+		if (options['dynamic-wrapping'] || options['add-count'] !== null) {
+    	counter = (options['add-count'] == null) ? 1 : options['add-count'];
+		} else if (options['row-fill'] === true) {
       counter = options['row-size'] - options['original-data-length'] % options['row-size'];
       if (counter <= 0) {
-        counter = options['add-count'];
+        counter = 1;
       }
-    }
+		} else {
+			counter = 1;
+	  }
+
     for (var i = 0; i < counter; ++i) {
       options.data.push({ "type":["add"] });
     }
@@ -69,7 +76,8 @@ window['card-ui-visualizations'] = {
     // generate mark-up
     var $row = null;
     _.each(options.data, function (element, index) {
-      if (index % options['row-size'] === 0) {
+      if (index == 0 ||
+				  (!options['dynamic-wrapping'] && index % options['row-size'] === 0)) {
         $row = $('<div>', { class: 'card-block-row' });
         $block.append($row);
         if (options['stack'] === true) {
