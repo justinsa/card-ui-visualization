@@ -72,6 +72,18 @@
         <li><code>row-fill: true</code></li>
       </ul>
       <div class="card-block row-fill" data-row-size="8" data-set="dataSet1" data-add-click-callback="addClick"></div>
+
+      <h3>Example: Single Row with Dynamic Wrapping</h3>
+      <ul>
+        <li><code>dynamic-wrapping: true</code></li>
+        <li><code>row-size: 8</code> <em>(ignored)</em></li>
+        <li><code>row-fill: true</code> <em>(ignored)</em></li>
+      </ul>
+	  <div style="background: #eee; width: 250px;">
+	  	<div class="card-block row-fill dynamic-wrapping" data-row-size="4" data-set="dataSet1" 
+			data-add-click-callback="addClick"></div>
+	  </div>
+
       <h3>Example: Multiple Rows</h3>
       <ul>
         <li><code>row-size: 8</code></li>

@@ -6,7 +6,7 @@ a, a:link, a:hover, a:focus, a:visited {
   text-decoration: none;
 }
 button:focus {
-	outline: none;
+  outline: none;
 }
 
 /* General card block and ring stylings */
@@ -41,11 +41,8 @@ button:focus {
   margin: 0;
   padding: 0;
 }
-.card-block-row {
-  margin: 10px;
-}
-.card-block .card:nth-child(1n+2) {
-  margin-left: 5px;
+.card-block .card {
+  margin: 0 5px 5px 0;
 }
 .card-block.stack > .card-block-row {
   height: 50px;
