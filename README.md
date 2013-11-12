@@ -1,4 +1,1 @@
-card-ui-visualization
-=====================
-
-Provides multiple views for presenting cards in a graphical representation.
+# [Card UI Visualizations Project Page](http://justinsa.github.io/card-ui-visualizations)

@@ -49,7 +49,17 @@ window['card-ui-visualizations'] = {
     if (options['add-click-callback'] === undefined) {
       options['add-click-callback'] = _.identity;
     }
-    
+    // argument precedence
+    // dynamic-wrapping and stack are not compatible settings - stack takes precedence
+    if (options['stack'] === true) {
+      options['dynamic-wrapping'] = false;
+    }
+    // dynamic-wrapping is not compatible with row-fill and row-size settings - dynamic-wrapping takes precendence
+    if (options['dynamic-wrapping'] === true) {
+      options['row-fill'] = false;
+      options['row-size'] = null;
+    }
+   
     // create shallow copy of array
     options.data = _.clone(window[options.data]);
     options['original-data-length'] = options.data.length;
@@ -59,7 +69,7 @@ window['card-ui-visualizations'] = {
     if (options['dynamic-wrapping'] || options['add-count'] !== null) {
       counter = (options['add-count'] == null) ? 1 : options['add-count'];
     } else if (options['row-fill'] === true) {
-      counter = options['row-size'] - options['original-data-length'] % options['row-size'];
+      counter = options['row-size'] - (options['original-data-length'] % options['row-size']);
       if (counter <= 0) {
         counter = 1;
       }
@@ -70,12 +80,12 @@ window['card-ui-visualizations'] = {
     options['data-length'] = options.data.length;
 
     // generate mark-up
-    var $row = null;
+    // set initial container to block for dynamic-wrapping case
+    var $container = $block;
     _.each(options.data, function (element, index) {
-      if (index == 0 ||
-          (!options['dynamic-wrapping'] && index % options['row-size'] === 0)) {
-        $row = $('<div>', { class: 'card-block-row' });
-        $block.append($row);
+      if (!options['dynamic-wrapping'] && (index % options['row-size'] === 0)) {
+        $container = $('<div>', { class: 'card-block-row' });
+        $block.append($container);
         if (options['stack'] === true) {
           $block.append($('<div>', { class: 'clearfix' }));
         }
@@ -113,7 +123,7 @@ window['card-ui-visualizations'] = {
           $node.attr('style', _.str.sprintf('left: %dpx; z-index: %d', (options['stack-card-offset'] * index), (options['data-length'] - 1 - index)));
         }
       }
-      $row.append($node);
+      $container.append($node);
     });
   },
 
