@@ -1,0 +1,77 @@
+@import url('normalize.css');
+@import url('bootstrap-3.0.0.min.css');
+
+/* Base styles */
+a, a:link, a:hover, a:focus, a:visited {
+  text-decoration: none;
+}
+button:focus {
+  outline: none;
+}
+
+/* General card block and ring stylings */
+.card-block .card, .card-ring .card {
+  border-radius: 5px;
+  border: solid 1px black;
+  cursor: pointer;
+  display: inline-block;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  width: 50px;
+}
+.card:hover, .card:focus {
+  text-decoration: none;
+}
+.card.add {
+  background-color: #008000;
+  color: white;
+  font-family: arial, sans-serif;
+  font-size: 24px;
+  line-height: 50px;
+  text-align: center;
+}
+.card.add:after {
+  content: '+';
+}
+
+/* Card block stylings */
+.card-block {
+  margin: 0;
+  padding: 0;
+}
+.card-block .card {
+  margin: 0 5px 5px 0;
+}
+.card-block.stack > .card-block-row {
+  height: 50px;
+  position: relative;
+}
+.card-block.stack .card {
+  margin-left: 0;
+  position: absolute;
+}
+.card-block.stack .card:hover {
+  height: 56px;
+  top: -3px;
+  width: 56px;
+  z-index: 9999 !important;
+}
+
+/* Card ring stylings */
+.card-ring {
+  border-radius: 180px;
+  border: solid 1px gray;
+  height: 360px;
+  margin: 10px auto;
+  padding: 0;
+  position: relative;
+  width: 360px;
+}
+.card-ring > .card {
+  border-radius: 25px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
