@@ -63,11 +63,11 @@ button:focus {
 .card-ring {
   border-radius: 100%;      /* CHANGE: 100% */
   border: solid 1px gray;
-  height: 460px;            /* CHANGE: ADJUST HEIGHT AND WIDTH */
+  height: 360px;            /* CHANGE: ADJUST HEIGHT AND WIDTH */
   margin: 10px auto;
   padding: 0;
   position: relative;
-  width: 360px;
+  width: 460px;
 }
 .card-ring > .card {
   border-radius: 25px;

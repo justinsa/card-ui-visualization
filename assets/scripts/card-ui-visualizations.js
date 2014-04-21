@@ -159,8 +159,8 @@ window['card-ui-visualizations'] = {
       options['ring-size'] = options['data-length'];
     }
 
-    // CHANGE: VALUE MUST ALSO FACTOR IN HEIGHT
-    var radius = $ring.innerWidth() / 2;
+    var widthRadius  = $ring.innerWidth()  / 2;
+    var heightRadius = $ring.innerHeight() / 2;
     var theta = (options['clockwise'] === true ? 1 : -1) * 2 * Math.PI / options['ring-size'];
     var thetaOffset = -(Math.PI / 2);
 
@@ -191,8 +191,8 @@ window['card-ui-visualizations'] = {
       }
       $ring.append($node);
       var offset = $node.outerWidth() / 2;
-      var x = (radius - offset) + (radius * Math.cos(thetaOffset + (theta * (index + 1))));
-      var y = (radius - offset) + (radius * Math.sin(thetaOffset + (theta * (index + 1))));
+      var x = (widthRadius - offset) + (widthRadius * Math.cos(thetaOffset + (theta * (index + 1))));
+      var y = (heightRadius - offset) + (heightRadius * Math.sin(thetaOffset + (theta * (index + 1))));
       $node.css('left', x);
       $node.css('top', y);
     });
