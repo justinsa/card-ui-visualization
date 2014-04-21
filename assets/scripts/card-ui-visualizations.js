@@ -159,6 +159,7 @@ window['card-ui-visualizations'] = {
       options['ring-size'] = options['data-length'];
     }
 
+    // CHANGE: VALUE MUST ALSO FACTOR IN HEIGHT
     var radius = $ring.innerWidth() / 2;
     var theta = (options['clockwise'] === true ? 1 : -1) * 2 * Math.PI / options['ring-size'];
     var thetaOffset = -(Math.PI / 2);
