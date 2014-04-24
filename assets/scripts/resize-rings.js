@@ -1,11 +1,12 @@
 $( document ).ready(function() {
 
   function resizeRings(width, height){
-    alert(width);
+    $('.card-ring').css({'height': height, 'width': width});
+    $('.card-ring').each(function() { window['card-ui-visualizations']['card-ring'](this); });
   }
 
   $('#longWide').on('click', function(){
-    resizeRings(100,100)
+    resizeRings(300, 300)
   });
 
 });
