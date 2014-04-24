@@ -77,6 +77,11 @@ button:focus {
 }
 
 /* Ring shape button stylings */
+.buttons {
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
 .buttons img {
   height: 45px;
   margin-right: 5px;
