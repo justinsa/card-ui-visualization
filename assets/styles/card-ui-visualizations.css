@@ -75,3 +75,9 @@ button:focus {
   padding: 0;
   position: absolute;
 }
+
+/* Ring shape button stylings */
+.buttons img {
+  height: 45px;
+  margin-right: 5px;
+}
