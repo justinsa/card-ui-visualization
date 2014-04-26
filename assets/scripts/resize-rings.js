@@ -12,23 +12,23 @@ $( document ).ready(function() {
   }
 
   $('#longWide').on('click', function(){
-    resizeRings(420, 300);
+    resizeRings(440, 320);
   });
 
   $('#shortWide').on('click', function(){
-    resizeRings(390, 330);
+    resizeRings(410, 350);
   });
 
   $('#circle').on('click', function(){
-    resizeRings(360, 360);
+    resizeRings(380, 380);
   });
 
   $('#shortNarrow').on('click', function(){
-    resizeRings(330, 390);
+    resizeRings(350, 410);
   });
 
   $('#longNarrow').on('click', function(){
-    resizeRings(300, 420);
+    resizeRings(320, 440);
   });
 
 });
