@@ -61,17 +61,70 @@ button:focus {
 
 /* Card ring stylings */
 .card-ring {
-  border-radius: 180px;
+  border-radius: 100%;
   border: solid 1px gray;
-  height: 360px;
+  height: 380px;
   margin: 10px auto;
   padding: 0;
   position: relative;
-  width: 360px;
+  width: 380px;
 }
 .card-ring > .card {
   border-radius: 25px;
   margin: 0;
   padding: 0;
   position: absolute;
+}
+
+/* Ring shape button stylings */
+
+.buttons {
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
+.buttons > div { /* blue button */
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  background-color: rgb(59, 139, 204);
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.buttons > div > div { /* white oval */
+  display: block;
+  border: 5px solid white;
+  border-radius: 100%;
+  margin: auto;
+}
+
+#longWide > div {
+  height: 25px;
+  width: 35px;
+  margin-top: 9px;
+}
+
+#shortWide > div {
+  height: 28px;
+  width: 33px;
+  margin-top: 8px;
+}
+
+#circle > div {
+  height: 30px;
+  width: 30px;
+  margin-top: 7px;
+}
+
+#shortNarrow > div {
+  height: 33px;
+  width: 28px;
+  margin-top: 6px;
+}
+
+#longNarrow > div {
+  height: 35px;
+  width: 25px;
+  margin-top: 5px;
 }
