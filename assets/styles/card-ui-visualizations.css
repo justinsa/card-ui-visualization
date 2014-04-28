@@ -83,7 +83,7 @@ button:focus {
   margin-bottom: 35px;
 }
 
-.buttons > div {
+.buttons > div { /* blue button */
   height: 45px;
   width: 45px;
   display: inline-block;
@@ -92,20 +92,20 @@ button:focus {
   margin-right: 5px;
 }
 
-.buttons > div > div {
+.buttons > div > div { /* white oval */
   display: block;
   border: 5px solid white;
   border-radius: 100%;
   margin: auto;
 }
 
-#longWide > div {   /* blue button */
+#longWide > div {
   height: 25px;
   width: 35px;
   margin-top: 9px;
 }
 
-#shortWide > div {  /* white oval */
+#shortWide > div {
   height: 28px;
   width: 33px;
   margin-top: 8px;
