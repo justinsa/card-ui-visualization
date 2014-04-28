@@ -9,6 +9,7 @@
   <script type="text/javascript" src="assets/scripts/vendor/underscore.string-2.3.0.min.js" /></script>
   <script type="text/javascript" src="assets/scripts/vendor/bootstrap-3.0.0.min.js" /></script>
   <script type="text/javascript" src="assets/scripts/card-ui-visualizations.js" /></script>
+  <script type="text/javascript" src="assets/scripts/resize-rings.js"></script>
   <script type="text/javascript" src="assets/scripts/example-data.js"></script>
   <script type="text/javascript">
     var addClick = function () {
@@ -18,6 +19,11 @@
     $(function() {
       $('.card-block').each(function() { window['card-ui-visualizations']['card-block'](this); });
       $('.card-ring').each(function() { window['card-ui-visualizations']['card-ring'](this); });
+      $('#longWide').on('click', function() { resizeRings(440, 320); });
+      $('#shortWide').on('click', function() { resizeRings(410, 350); });
+      $('#circle').on('click', function() { resizeRings(380, 380); });
+      $('#shortNarrow').on('click', function() { resizeRings(350, 410); });
+      $('#longNarrow').on('click', function() { resizeRings(320, 440); });
     });
   </script>
 </head>
@@ -105,6 +111,16 @@
   <section>
     <div class="container">
       <h2>Card Ring</h2>
+
+      <div class="buttons">
+        <h4>Select ring shape:</h4>
+        <div id="longWide"><div></div></div>
+        <div id="shortWide"><div></div></div>
+        <div id="circle"><div></div></div>
+        <div id="shortNarrow"><div></div></div>
+        <div id="longNarrow"><div></div></div>
+      </div>
+
       <h3>Example: Filled Ring</h3>
       <ul>
         <li><code>ring-size: 15</code></li>
