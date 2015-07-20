@@ -1,4 +1,5 @@
-'use-strict';
+/* globals _ */
+'use strict';
 window.resizeRings = function (width, height) {
   var cardRingDivs = document.getElementsByClassName('card-ring');
   _.each(cardRingDivs, function(div) {
