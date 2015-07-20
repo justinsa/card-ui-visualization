@@ -1,0 +1,30 @@
+{
+  "name": "card-ui-visualizations",
+  "author": "justinsa",
+  "description": "A visualization library for thumbnail content.",
+  "keywords": [
+    "card",
+    "jquery",
+    "thumbnail",
+    "visualization"
+  ],
+  "homepage": "http://justinsa.github.io/card-ui-visualization/",
+  "main": "./assets/scripts/card-ui-visualizations.js",
+  "ignore": [
+    ".jshintrc",
+    "gulpfile.js",
+    "package.json",
+    "test.html",
+    "tests.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/justinsa/card-ui-visualization.git"
+  },
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  }
+}

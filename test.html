@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mocha Test Runner</title>
+    <link rel="stylesheet" href="./vendor/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="./vendor/mocha/mocha.js"></script>
+    <script src="./vendor/should/should.js"></script>
+
+    <script>mocha.setup('bdd');</script>
+
+    <script type="text/javascript" src="assets/scripts/vendor/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/vendor/underscore-1.5.2.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/vendor/underscore.string-2.3.0.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/vendor/bootstrap-3.0.0.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/card-ui-visualizations.js"></script>
+    <script type="text/javascript" src="assets/scripts/resize-rings.js"></script>
+    <script type="text/javascript" src="assets/scripts/example-data.js"></script>
+
+    <script src="./tests.js"></script>
+
+    <script>
+      if (window.mochaPhantomJS) {
+        mochaPhantomJS.run();
+      } else {
+        mocha.run();
+      }
+    </script>
+  </body>
+</html>

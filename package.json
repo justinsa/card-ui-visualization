@@ -1,0 +1,22 @@
+{
+  "name": "card-ui-visualizations",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justinsa/card-ui-visualization/"
+  },
+  "devDependencies": {
+    "bower": "*",
+    "gulp": "*",
+    "gulp-jshint": "*",
+    "gulp-mocha-phantomjs": "*"
+  },
+  "engines": {
+    "npm": "*"
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/bower/bin/bower install",
+    "postupdate": "node ./node_modules/bower/bin/bower update",
+    "test": "gulp js:test"
+  }
+}
