@@ -1,10 +1,10 @@
 A visualization library for thumbnail content. Go to the [Project Page](http://justinsa.github.io/card-ui-visualization) for a demonstration of the available behaviors.
 
-##Dependencies
+## Dependencies
 
 See [Project Page](http://justinsa.github.io/card-ui-visualization)
 
-##Basic Setup
+## Basic Setup
 
 1. Add this script to your application:
 
@@ -18,25 +18,25 @@ See [Project Page](http://justinsa.github.io/card-ui-visualization)
 <link rel="stylesheet" href="./assets/styles/card-ui-visualizations.css">
 ```
 
-##Configuration Options
+## Configuration Options
 
 Under construction
 
-##Basic Usage
+## Basic Usage
 
-###Card Blocks
+### Card Blocks
 
 ```JAVASCRIPT
 $('.card-block').each(function() { window['card-ui-visualizations']['card-block'](this); });
 ```
 
-###Card Rings
+### Card Rings
 
 ```JAVASCRIPT
 $('.card-ring').each(function() { window['card-ui-visualizations']['card-ring'](this); });
 ```
 
-##Development
+## Development
 
 After forking you should only have to run ```npm install``` from a command line to get your environment setup.
 
